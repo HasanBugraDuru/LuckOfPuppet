@@ -37,11 +37,11 @@ public class Lamp1 : MonoBehaviour
         {
             sp.sprite = aciklamba;
         }
-        if (gameObject.name == "lamp5" && DataTransfer.Instance.SeviyeGet(5))
+        if (gameObject.name == "lamp6" && DataTransfer.Instance.SeviyeGet(5))
         {
             sp.sprite = aciklamba;
         }
-        if (gameObject.name == "lamp5" && DataTransfer.Instance.SeviyeGet(6))
+        if (gameObject.name == "lamp7" && DataTransfer.Instance.SeviyeGet(6))
         {
             sp.sprite = aciklamba;
         }
