@@ -29,7 +29,7 @@ public class SuperJump : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.E))
+        if(UserInput.instance.controls.Ability.Ability.WasPressedThisFrame())
         {
             DataTransfer.Instance.SkillSet(5);
             power.SuperJump = true;

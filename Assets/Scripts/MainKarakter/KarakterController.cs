@@ -48,6 +48,7 @@ public class KarakterController : MonoBehaviour
         dash = GetComponent<Dash>();
         transform.position = new Vector2(-6f, -2f);
         pu.PowerUP1();
+        DikeneCarptiFNC();
     }
     void Update()
     {
