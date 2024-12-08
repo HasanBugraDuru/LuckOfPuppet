@@ -7,9 +7,9 @@ public class Dash : MonoBehaviour
     public bool canDash;
     public bool dashing;
     public float timeSincelastDash;
-    public   int dashSayacý;
+    public   int dashSayaci;
     public  float dashSpeed;
-    public float dashsüresi;
+    public float dashsuresi;
     public float dashbitme;
     float defaultGravity;
     public float speed;
@@ -32,11 +32,11 @@ public class Dash : MonoBehaviour
     public void DashFNC()
     {
 
-        if (dashSayacý == 0 &&timeSincelastDash>0.5f&&canDash)
+        if (dashSayaci == 0 &&timeSincelastDash>0.5f&&canDash)
         {
             
             dashing = true;
-            dashSayacý =+ 1;
+            dashSayaci =+ 1;
            
         }
     }
@@ -48,7 +48,7 @@ public class Dash : MonoBehaviour
         timeSincelastDash += Time.deltaTime;
         if (dashing)
         {
-            dashsüresi += Time.deltaTime;
+            dashsuresi += Time.deltaTime;
             trail.enabled = true;
         }
         else
@@ -60,18 +60,18 @@ public class Dash : MonoBehaviour
         {
             DashFNC();
         }
-        if (dashsüresi > 0) {
+        if (dashsuresi > 0) {
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(transform.localScale.x*dashSpeed, 0);
 
         }
-        if (dashsüresi > dashbitme)
+        if (dashsuresi > dashbitme)
         {
-            dashsüresi = 0f;
+            dashsuresi = 0f;
             dashing = false;
             timeSincelastDash = 0f;
             rb.gravityScale = defaultGravity;
-            dashSayacý = 0;
+            dashSayaci = 0;
         }
     }
 

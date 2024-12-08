@@ -9,12 +9,12 @@ public class PowerUp : MonoBehaviour
 
     public bool SuperJump;
     public bool SuperSpeed;
-    public bool GravityArttýr;
+    public bool GravityArttir;
     public float jumpx2;
     public bool GetSmall;
     public bool getDash;
     public bool doubleJump;
-    float küçülmesayýsý;
+    float SmallAmount;
     float newSpeed;
     int ozellik = 6;
 
@@ -39,18 +39,18 @@ public class PowerUp : MonoBehaviour
             karakter.ZiplamaGucu = jumpx2;
 
         }
-        if (ozellik == 2 ||GravityArttýr)
+        if (ozellik == 2 ||GravityArttir)
         {
-            karakter.GravityArttýrFNC();
+            karakter.GravityArttirFNC();
         }
 
         if (ozellik == 4 ||GetSmall)
         {
-            if (küçülmesayýsý == 0)
+            if (SmallAmount == 0)
             {
                 karakter.KucultFNC();
                 GetSmall = false;
-                küçülmesayýsý += 1;
+                SmallAmount += 1;
             }
         }
 

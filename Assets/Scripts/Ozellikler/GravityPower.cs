@@ -5,12 +5,12 @@ using UnityEngine;
 public class GravityPower : MonoBehaviour
 {
     PowerUp power;
-    public float zamanlayýcý;
+    public float zamanlayici;
     float gerekenZaman;
     private void Awake()
     {
         gerekenZaman = 2f;
-        zamanlayýcý = 0f;
+        zamanlayici = 0f;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,8 +32,8 @@ public class GravityPower : MonoBehaviour
         if (UserInput.instance.controls.Ability.Ability.WasPressedThisFrame())
         {
             DataTransfer.Instance.SkillSet(2);
-            power.GravityArttýr = true;
-            Debug.Log("Yerçekimi");
+            power.GravityArttir = true;
+            Debug.Log("Yercekimi");
         }
 
     }

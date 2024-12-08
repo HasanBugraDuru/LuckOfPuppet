@@ -5,12 +5,12 @@ using UnityEngine;
 public class SuperJump : MonoBehaviour
 {
      PowerUp power;
-     public  float zamanlayýcý;
+     public  float timer;
      float gerekenZaman;
     private void Awake()
     {
         gerekenZaman = 2f;
-        zamanlayýcý = 0f;
+        timer = 0f;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

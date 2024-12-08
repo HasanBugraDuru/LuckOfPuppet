@@ -33,9 +33,9 @@ public class KarakterController : MonoBehaviour
     public bool doubleJumpOn;
     public bool dikenresis;
     bool yerdemi;
-    public Transform zeminkontrolnoktasý;
+    public Transform zeminkontrolnoktasi;
     public LayerMask zeminLayer;
-    bool ikikezzýplayabilirmi;
+    bool ikikezziplayabilirmi;
     private void Awake()
     {
         UserInput.instance.moveInput.x = 0;
@@ -80,13 +80,13 @@ public class KarakterController : MonoBehaviour
     {
 
         sp.drawMode = SpriteDrawMode.Sliced;
-        zeminkontrolnoktasý.position = new Vector2(transform.position.x,transform.position.y -0.30f); 
+        zeminkontrolnoktasi.position = new Vector2(transform.position.x,transform.position.y -0.30f); 
         sp.size /= 2;
         collider2d.size = sp.size;
         sp.drawMode = SpriteDrawMode.Simple;
        
     }
-    public void GravityArttýrFNC()
+    public void GravityArttirFNC()
     {
         
         
@@ -123,10 +123,10 @@ public class KarakterController : MonoBehaviour
 
     public void ZiplaFNC()
     {
-            yerdemi = Physics2D.OverlapCircle(zeminkontrolnoktasý.position, .2f, zeminLayer);
+            yerdemi = Physics2D.OverlapCircle(zeminkontrolnoktasi.position, .2f, zeminLayer);
             if (yerdemi)
             {
-                ikikezzýplayabilirmi = true;
+                ikikezziplayabilirmi = true;
                 anim.SetBool("yerdemi", true);
               }
              else { anim.SetBool("yerdemi",false); }
@@ -141,11 +141,11 @@ public class KarakterController : MonoBehaviour
                 }
                 else
                 {
-                    if (ikikezzýplayabilirmi&&doubleJumpOn)
+                    if (ikikezziplayabilirmi&&doubleJumpOn)
                     {
                         rb.velocity = new Vector2(rb.velocity.x, ZiplamaGucu);
                         jump.Play();
-                        ikikezzýplayabilirmi = false;
+                        ikikezziplayabilirmi = false;
                     }
                 }
 
